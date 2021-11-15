@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+# no uart
+#verilator --cc --exe -Iunisims -Wno-TIMESCALEMOD -Wno-fatal cmod_a7.v tb.cpp --trace
+
+# to use https://github.com/ZipCPU/wbuart32/blob/master/bench/cpp/uartsim.cpp
+verilator --cc --exe -Iunisims -Wno-TIMESCALEMOD -Wno-fatal cmod_a7.v uartsim.cpp tb.cpp --trace
+
+if [ $? -ne 0 ] ; then
+   exit
+fi
+
+cd obj_dir;make -f Vcmod_a7.mk;cd ..
+if [ $? -ne 0 ] ; then
+   exit
+fi
+
+
