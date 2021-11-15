@@ -4,7 +4,7 @@ Test verilog integration with Litex.
 
    * verilog module only - host control through CSR
 
-   * verilog module slave integrated with A2P SOC (CSR or WB Slave control)
+   * verilog module slave integrated with [A2P](https://git.openpower.foundation/cores/a2p) SOC (CSR or WB Slave control)
 
 ## fpga (no core)
 
